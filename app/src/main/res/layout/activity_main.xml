@@ -28,6 +28,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/white"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/localisation" />
 
         <ImageView
             android:id="@+id/weatherImage"
@@ -37,7 +48,8 @@
             app:layout_constraintTop_toBottomOf="@id/localisation"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="45dp"
+            tools:ignore="ContentDescription" />
         <TextView
             android:id="@+id/temperature"
             android:layout_width="wrap_content"

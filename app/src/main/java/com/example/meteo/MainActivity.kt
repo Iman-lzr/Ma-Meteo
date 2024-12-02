@@ -19,6 +19,9 @@ import com.example.meteo.Retrofit.WeatherResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         val temperatureTextView = findViewById<TextView>(R.id.temperature)
         val weatherConditionTextView = findViewById<TextView>(R.id.txt)
         val txtTem = findViewById<TextView>(R.id.txt_tem)
+        val dateTextView = findViewById<TextView>(R.id.date)
+
+        dateTextView.text = getCurrentDate().toString()
 
         swipeRefreshLayout = findViewById(R.id.main)
         swipeRefreshLayout.setOnRefreshListener {
@@ -143,5 +149,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Permission refusée", Toast.LENGTH_LONG).show()
             }
         }
+    }
+    private fun getCurrentDate(): String {
+        val dateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.getDefault())
+        return dateFormat.format(Date())
     }
 }
